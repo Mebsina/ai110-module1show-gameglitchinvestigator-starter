@@ -89,6 +89,8 @@ if submit:
     if not ok:
         # st.session_state.history.append(raw_guess)
         st.error(err)
+    elif guess_int < low or guess_int > high:
+        st.error(f"Enter a number between {low} and {high}.")
     else:
         st.session_state.attempts += 1
         st.session_state.history.append(guess_int)
